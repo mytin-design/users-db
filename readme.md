@@ -35,3 +35,32 @@ If correct, redirects to dashboard.
 
 ### Missing 
 No option to reset password
+
+
+The option to reset :
+1. may just access the database, and update a password - based on the email of the user or username, whichever is set as primary key - in this case, the username
+
+This section is making it a little bit harder, because I dont understand whats happening.
+
+2. For security concerns, Send a link to email of the user, which arrives as a token - 
+
+
+## RECOMMENDATIONS
+Leave the email function for now
+
+Start with the known, going to the unknown;
+
+
+## send registration details to email
+//There is a problem with the mailing function - or maybe i dont just undertand it yet
+
+Once I do - send registration details to the users email - esp their new email, username and password;
+
+
+## hide the error box several seconds after appearing
+During login
+
+
+
+## STYLES TAKING LONG TO REFLECT WHILE RUNNING ON A SERVER
+
