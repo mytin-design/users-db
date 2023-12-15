@@ -105,11 +105,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit();
             } else {
                 // Passwords do not match
-                echo "<div class='tlogerbx'><p>Incorrect password</p></div>";
+               // echo "<div class='tlogerbx'><p>Incorrect password</p></div>";
+              // echo "<script>displayAlert('Incorrect password');</script>";
+              echo "<script>
+                        alert('Incorrect password or username');
+                    </script>";
             }
         } else {
             // No user found with the provided username
-            echo "<div class='tlogerbx'><p>User not found</p></div>";
+            //echo "<div class='tlogerbx'><p>User not found</p></div>";
+            echo "<script>
+                displayAlert('All fields are required');
+            </script>;";
         }
 
         // Close the statement and connection
@@ -119,6 +126,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 'All fields are required';
     }
 }
+
+
+
 
 // Other HTML content...
 
@@ -144,6 +154,23 @@ The 'confirmpass' field itself is not stored in the database. It's only used for
 
 
 ?>
+
+<!-- <script>
+      // Function to display the alert for a few seconds and then hide it
+  function displayAlert(message) {
+    var alertBox = document.createElement('div');
+    alertBox.className = 'tlogerbx';
+    alertBox.innerHTML = '<p>' + message + '</p>';
+    document.body.appendChild(alertBox);
+
+    setTimeout(function() {
+      alertBox.style.display = 'none';
+    }, 3000); // Change 3000 to the desired display duration in milliseconds (e.g., 3000 = 3 seconds)
+  }
+
+  // Call displayAlert function with the appropriate message from your PHP code
+  // For example, in your PHP code where you echo the error messages:
+</script> -->
 
 
 <!DOCTYPE html>
@@ -180,8 +207,12 @@ The 'confirmpass' field itself is not stored in the database. It's only used for
             <div class="stdActbtns">
                 <div class="stdActbtnsIn">
                     <button id="loginButton" type="submit" class="stdinfobtn">Login</button>
-                    <a href="./index.php" class="stdinfobta">Register</a>
-                    <a href="./reset.php" id="saveStudent" type="submit"  class="stdinfobtn">Reset</a>
+                    <div class="stdinfobta">
+                        <a href="./index.php">Register</a>
+                    </div>
+                    <div class="stdinfobta">
+                        <a href="./reset.php" id="saveStudent" type="submit">Reset</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -199,6 +230,9 @@ The 'confirmpass' field itself is not stored in the database. It's only used for
             }
             return true;
         }
+
+
+      
     </script>
 </body>
 </html>

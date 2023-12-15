@@ -425,9 +425,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="stdActbtns">
                 <div class="stdActbtnsIn">
                     <button id="saveStudent" type="submit" class="stdinfobtn">Register</button>
-                    <button class="stdinfobta">
-                    <a href="./login.php" >Login</a>
-                    </button>
+                    <div class="stdinfobta">
+                         <a href="./login.php" >Login</a>
+                    </div>
                 </div>                
             </div>
         </div>

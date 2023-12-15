@@ -235,7 +235,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validating email format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<div><p>Invalid email format.</p></div>";
+        //echo "<div><p>Invalid email format.</p></div>";
+        // echo "<script>
+        //         alert('Please use a valid email.');
+        //     </script>";
+        echo "<div><p>Please use a valid email.</p>";
+
         exit; // Stop execution if email format is invalid
     }
 
@@ -256,14 +261,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $reset_link = "http://localhost/users/reset_password.php?email=$email&token=$token";
             echo "<div><p>A password reset link has been generated:</p>";
             echo "<p><a href='$reset_link'>$reset_link</a></p></div>";
+    //        echo '<script>
+    //     var resetLink = "' . $reset_link . '";
+    //     var confirmation = confirm("A password reset link has been generated. Click OK to proceed.\n\n" + resetLink);
+    //     if (confirmation) {
+    //         window.open(resetLink, "_self");
+    //     }
+    //   </script>';
         } else {
             echo "<div><p>Email not found in our records.</p></div>";
+            // echo "<script>
+            //         alert('Email not found in our records.');
+            //     </script>";
+            exit;
+                
         }
 
         $stmt->close();
         $update_stmt->close();
     } else {
         echo 'Email is required';
+        // echo "<script>
+        //     alert('Email is required.');
+        // </script>";
+
     }
 }
 
@@ -282,7 +303,7 @@ $connect->close();
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <form id="studentRegbox" class="stdmainbx hbox" method="post" action="#" >
+    <form id="studentRegbox" class="stdmainbx hbox" method="post" action="./reset.php" >
         <p class="studentRegTitle stdmaintitle">Reset Page</p>
         <hr>
         <div class="studentRegIn stdmainin">
@@ -296,11 +317,8 @@ $connect->close();
                     </div>
                     
                 </aside>
-                <aside class="stdb stdaside">
-                    <div class="studentProfile">
-                        <img src=" ./../../abst1_slash.jpg" class="stdImg" width="50" alt="Student Profile">
-                        <button id="changeProfile" onclick="changeProfile()">Change Profile</button>
-                    </div>
+                
+            </div>
                   
             </div>
                 <p class="notif" id="regNotif"></p>
@@ -308,7 +326,10 @@ $connect->close();
             <hr color="lightgray">
             <div class="stdActbtns">
                 <div class="stdActbtnsIn">
-                    <button id="saveStudent" type="submit" class="stdinfobtn">Reset</button>
+                    <button  type="submit" class="stdinfobtn">Reset</button>
+                    <div class="stdinfobta">
+                        <a href="./login.php">Login</a>
+                    </div>
                 </div>                
             </div>
         </div>

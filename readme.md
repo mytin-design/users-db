@@ -64,3 +64,7 @@ During login
 
 ## STYLES TAKING LONG TO REFLECT WHILE RUNNING ON A SERVER
 
+
+## The notifications are not being handled appropriately
+
+Especially those of the reset
