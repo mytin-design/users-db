@@ -68,3 +68,29 @@ During login
 ## The notifications are not being handled appropriately
 
 Especially those of the reset
+
+
+
+## END OF VERSION 1 
+AS AT 15/12/2023 - 12:00 
+
+
+Registration - working
+
+Login - working
+
+Reset - working
+
+Reset link generation - working
+
+User preferences - working
+
+ISSUE 00111 - STYLING
+You may need to fix styling for alerts;
+
+The code may be used as is, or modified to fit developer needs.
+
+## ##################################DENIS KING - denismytin@gmail.com ##############################################
+
+
+
